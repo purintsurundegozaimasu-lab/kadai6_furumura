@@ -1,0 +1,582 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #e9d9c0;
+}
+.logo {
+  width: 434px;
+}
+
+.wrapper {
+  max-width: 1000px; /*横幅1000px内 */
+  padding: 0 10px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 4.44%;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99999;
+}
+
+.header_nav ul {
+  display: flex;
+  gap: 48px;
+}
+
+.header_nav a {
+  font-family: "Alatsi", sans-serif;
+  color: #ffffff;
+}
+
+.hamburger,
+.header_nav-sp {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  /* ハンバーガーメニュー */
+  .hamburger {
+    display: block;
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+  }
+
+  .hamburger span {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+
+  .hamburger::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13px;
+    transition: 0.3s;
+  }
+
+  .hamburger::after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 13px;
+    transition: 0.3s;
+  }
+
+  .open span {
+    background-color: transparent;
+  }
+  .open::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .open::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .header_nav {
+    display: none;
+  }
+
+  .header_nav-sp {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000008f;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+  }
+  .header_nav-sp ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+  }
+  .header_nav-sp a {
+    color: #ffffff;
+  }
+  /* ハンバーガーメニュー 以上*/
+}
+
+.section-title {
+  font-family: "Diplomata", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: #d20202;
+  margin-bottom: 40px;
+}
+
+.text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: -0.05em;
+}
+
+#concept {
+  max-width: 1000px; /*横幅1000px内 */
+  margin: 72px auto 144px auto; /*要素中央揃え*/
+  text-align: center; /*テキスト単位で中央揃え*/
+  font-weight: normal;
+}
+
+.concept-en {
+  font-family: "Alatsi", sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.concept-ja {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 64px;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+#concept .text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.sp-br {
+  display: none;
+}
+
+#about-us {
+  max-width: 1000px; /*横幅1000px内 */
+  margin: 144px auto 144px auto; /*要素中央揃え*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-us-image {
+  width: 44%;
+  height: auto;
+  border-radius: 0 0 64px 0;
+  overflow: hidden;
+}
+
+.about-us-text .section-title {
+  text-align: left;
+}
+
+.about-us-text {
+  width: 52%;
+  height: auto;
+}
+
+.about-us-text .sub-title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+#menu {
+  max-width: 1000px; /*横幅1000px内 */
+  margin: 144px auto 144px auto; /*要素中央揃え*/
+}
+
+#menu .item {
+  font-family: "Diplomata", sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+  color: #d20202;
+  margin: -13px auto 6px auto;
+}
+
+#menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#menu li {
+  width: 31.2%;
+  height: auto;
+}
+
+#menu img {
+  border-radius: 0 64px 0 0;
+}
+
+#gallery {
+  margin: 144px 0 144px 0; /*要素中央揃え*/
+}
+
+#gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#event {
+  margin: 144px auto 144px auto; /*要素中央揃え*/
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  border: #4f270b solid 1px;
+  background-color: #ffffff;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+#event li {
+  display: flex;
+  margin: 16px 0;
+  gap: 40px;
+}
+
+.date {
+  font-weight: bold;
+  width: 136px;
+}
+
+#access {
+  margin: 144px auto 0 auto; /*要素中央揃え*/
+}
+
+#access iframe {
+  width: 100%;
+  height: 353px;
+}
+
+#footer {
+  padding: 80px 0 60px 0;
+  background-color: #ffffff;
+}
+
+.footer {
+  max-width: 1000px; /*横幅1000px内 */
+  margin: 0 auto;
+}
+
+.store-info {
+  display: flex;
+  margin: 0 auto 60px auto;
+  gap: 39px;
+}
+
+.store-name {
+  font-family: "Diplomata", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.store-detail li {
+  display: flex;
+  font-family: "Noto Sans JP", sans-serif;
+  gap: 40px;
+  margin-bottom: 16px;
+}
+
+.store-detail .item {
+  width: 64px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.store-detail .text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 140px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+
+/* SP対応 */
+
+@media screen and (max-width: 1100px) {
+  .concept-ja {
+    font-size: 45px;
+  }
+  #about-us .sub-title {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 4.44%;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    width: 244px;
+    line-height: 0;
+  }
+
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-family: "Diplomata", sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: #d20202;
+    margin: 32px auto;
+  }
+
+  .text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  #concept {
+    margin: 80px auto 126px auto; /*要素中央揃え*/
+    text-align: center; /*テキスト単位で中央揃え*/
+    font-weight: normal;
+  }
+
+  .concept-en {
+    font-family: "Alatsi", sans-serif;
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  .concept-ja {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 31px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  #concept .text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .sp-br {
+    display: block;
+  }
+
+  #about-us {
+    margin: 80px auto; /*要素中央揃え*/
+    display: block; /*flex解除*/
+  }
+
+  .about-us-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .about-us-text .section-title {
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .about-us-text {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-us-text .sub-title {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  #menu {
+    margin: 80px auto 80px auto; /*要素中央揃え*/
+  }
+
+  #menu .item {
+    font-family: "Diplomata", sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    color: #d20202;
+    margin: -13px auto 6px auto;
+  }
+
+  #menu ul {
+    display: block;
+  }
+
+  #menu li {
+    width: 100%;
+    height: auto;
+    margin: 40px 0;
+  }
+
+  #menu img {
+    border-radius: 0 64px 0 0;
+  }
+
+  #menu .text {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  #gallery {
+    margin: 80px auto; /*要素中央揃え*/
+  }
+
+  #gallery ul {
+    display: flex;
+  }
+
+  #gallery li {
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  #gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #event {
+    margin: 80px auto; /*要素中央揃え*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+  }
+
+  .box {
+    display: block;
+    justify-content: center;
+    border: #4f270b solid 1px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  #event ul {
+    margin: 32px 20px;
+  }
+
+  #event li {
+    display: block;
+    margin: 32px auto;
+  }
+
+  .date {
+    font-weight: bold;
+    margin: 8px 0;
+  }
+
+  .info {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #access {
+    margin: 80px auto 0 auto; /*要素中央揃え*/
+  }
+
+  #access iframe {
+    width: 100%;
+    height: 353px;
+  }
+
+  #footer {
+    padding: 80px 0;
+    background-color: #ffffff;
+  }
+
+  .footer {
+    margin: 0 auto;
+  }
+
+  .store-info {
+    display: block;
+    margin: 0 auto 240px auto;
+  }
+
+  .store-name {
+    font-family: "Diplomata", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 39px;
+  }
+
+  .store-detail li {
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    margin-bottom: 24px;
+  }
+
+  .store-detail .item {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 8px 0;
+  }
+
+  .store-detail .text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 140px;
+  }
+}
